@@ -1,0 +1,140 @@
+
+.dropdown {
+  position: relative;
+
+  &__menu {
+    /*display:none;*/
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s .2s, opacity .2s .2s ease-out;
+
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 2000;
+    float: left;
+    min-width: 270px;
+    background: $white;
+    margin-top: 0;
+    padding: 20px;
+    box-shadow: 0 13px 16px 0 rgba(0, 0, 0, 0.1);
+
+  }
+
+  &.is-open .dropdown__menu,
+  &:hover .dropdown__menu,
+  &:focus .dropdown__menu {
+    /*display:block;*/
+    visibility: visible;
+    opacity: 1;
+  }
+
+}
+
+.area-typeahead {
+  margin-bottom: 20px;
+  .form-control {
+    display: flex;
+    flex-direction: column;
+    height: initial;
+    //align-items: center;
+    padding: 0;
+
+    .rbt-input {
+      display: flex;
+      height: 44px;
+      overflow: hidden;
+      &>div {
+        display: flex !important;
+        width: 100%;
+        &>div {
+          display: flex !important;
+          align-items: center;
+          width: 100%;
+          background:$white url(./images/svg/icn-account-location.svg) left 15px center no-repeat;
+          background-size:20px 20px;
+          padding: 0 20px 0 46px !important;
+          &:first-child {
+            position: relative;
+            z-index: 23;
+
+          }
+          &:last-child {
+            position: relative;
+            z-index: 23;
+            background-color: green;
+            top: 20px;
+          }
+        }
+      }
+
+      input {
+        width: 100% !important;
+        margin: 0;
+        min-height: 19px;
+        &::placeholder {
+          color: $mid-grey;
+          font-size: 15px;
+        }
+      }
+    }
+
+    .rbt-menu {
+      position: absolute;
+      top: 44px;
+      width: 100%;
+      margin-top: 0;
+      border: 0.5px solid $mid-grey;
+
+      li {
+        background-color: $white;
+        color: $green;
+        border: none;
+        border-top: 0.5px solid $mid-grey;
+        padding: 0;
+
+        &.disabled {
+          padding: 15px 10px;
+          background-color: $white !important;
+          cursor: auto;
+        }
+
+        a {
+          display: inline;
+          color: $dark-grey;
+          &>div {
+            padding: 15px 10px;
+          }
+        }
+
+        .highlighted-text {
+          background-color: initial;
+          color: initial;
+          font-weight: 500;
+          font-style: initial;
+        }
+
+        &:hover {
+          background-color: $green;
+          color: $white;
+        }
+
+        &.active {
+          background-color: $green;
+          color: $white;
+        }
+      }
+    }
+
+  }
+}
+
+
+// Google auto complete
+.pac-item {
+  line-height: 40px;
+  .pac-icon {
+    margin-top: 10px;
+  }
+}
+

@@ -1,0 +1,106 @@
+
+.autoHideNotificationBar {
+  min-height: 35px;
+  @include breakpoint(sm) {
+    min-height: 50px;
+  }
+
+  .GeneralNotificationBar {
+    position: fixed;
+    top: 50px;
+    z-index: 10;
+
+    @include breakpoint(sm) {
+      top: 80px;
+    }
+  }
+}
+
+.NotificationFirstClean {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 35px;
+  background-color: $slate-grey;
+  color: $white;
+  font-size: 10px;
+  padding: 0 10px;
+  @include breakpoint(sm) {
+    min-height: 50px;
+    font-size: 15px;
+  }
+
+  div {
+    font-weight: 300;
+  }
+
+  span {
+    padding: 0 5px;
+    @include breakpoint(sm) {
+      padding: 0 10px;
+    }
+  }
+
+  i {
+    display: none;
+    @include breakpoint(sm) {
+      display: inline-block;
+    }
+  }
+
+}
+
+.notificationBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 35px;
+  background-color: $green;
+  color: $white;
+  font-size: 11px;
+  font-weight: 400;
+  padding: 0 10px;
+  text-align: center;
+  @include breakpoint(sm) {
+    min-height: 50px;
+    font-size: 15px;
+  }
+
+  .icn {
+    padding: 3px 0 0 6px;
+    svg {
+      height: 20px;
+      width: 20px;
+    }
+  }
+
+  div {
+    font-weight: 400;
+  }
+
+  span {
+    padding: 0 5px;
+    @include breakpoint(sm) {
+      padding: 0 10px;
+    }
+  }
+
+  i {
+    display: none;
+    @include breakpoint(sm) {
+      display: inline-block;
+    }
+  }
+}
+
+.notificationBar--grey {
+  background-color: $slate-grey;
+}
+
+.notificationBar--error {
+  background-color: $pink;
+}

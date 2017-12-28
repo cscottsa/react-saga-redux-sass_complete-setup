@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url>
+    <loc>https://domestly.com</loc>
+    <lastmod>2017-10-23T14:00:12+00:00</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>1.00</priority>
+  </url>
+  <url>
+    <loc>https://domestly.com/how-it-works/</loc>
+    <lastmod>2017-10-23T14:00:12+00:00</lastmod>
+    <changefreq>0.9</changefreq>
+  </url>
+  <url>
+    <loc>https://domestly.com/refer-a-friend/</loc>
+    <lastmod>2017-10-23T14:00:12+00:00</lastmod>
+    <changefreq>0.9</changefreq>
+  </url>
+</urlset>

@@ -1,0 +1,116 @@
+.footer {}
+
+.footer--base-row{
+  font-size:10px;
+  line-height:1.33;
+  font-weight: 400;
+  background-color: #282f37;
+  padding: 20px 15px;
+
+  @include breakpoint(sm) {
+    font-size:12px;
+    padding: 0;
+  }
+
+
+  >.container-fluid-outer{
+    display: flex;
+    flex-direction: column;
+    position:relative;
+
+    @include breakpoint(sm) {
+      flex-direction: row;
+      justify-content: space-between;
+      height: 50px;
+    }
+  }
+
+  &__left{
+    order: 2;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 5px;
+    @include breakpoint(sm) {
+      order: inherit;
+      flex-direction: row;
+      padding-bottom: 0;
+    }
+
+    &__links {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      @include breakpoint(sm) {
+        justify-content: inherit;
+        margin-left: 30px;
+      }
+
+      a {
+        color: $mid-grey;
+        margin-left: 15px;
+        &:first-child {
+          margin-left: 0;
+        }
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+
+  }
+
+  &__copyright{
+    order: 3;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-bottom: 6px;
+
+    @include breakpoint(sm) {
+      order: inherit;
+      padding-bottom: 0;
+    }
+
+    span {
+      color: $mid-grey;
+      font-size: 12px;
+    }
+  }
+
+  &__right{
+    order: 3;
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @include breakpoint(sm) {
+      order: inherit;
+      justify-content: flex-end;
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+      width: 115px;
+      height: 36px;
+      color: $green;
+      padding: 0 25px 0 18px;
+      border: 1px solid $green;
+      border-radius: 2px;
+
+      img {
+        width: 14px;
+      }
+
+      span {
+        margin-left: 10px;
+      }
+    }
+  }
+
+}

@@ -1,0 +1,309 @@
+export const REQUEST = 'REQUEST';
+export const SUCCESS = 'SUCCESS';
+export const FAILURE = 'FAILURE';
+
+export const UPDATE_ROUTER_STATE = 'UPDATE_ROUTER_STATE';
+export const NAVIGATE = 'NAVIGATE';
+export const RESET_ERROR_MESSAGE = 'RESET_ERROR_MESSAGE';
+
+export const createRequestTypes = (base) => {
+  const res = {};
+  //eslint-disable-next-line
+  [REQUEST, SUCCESS, FAILURE].forEach(type => res[type] = `${base}_${type}`);
+  return res;
+};
+
+export const ACTIVE = 'active';
+export const INACTIVE = 'inactive';
+export const ENABLED = 'enabled';
+export const DISABLED = 'disabled';
+export const INITIAL = 'initial';
+
+export default {
+  createRequestTypes
+};
+
+
+export const enums = {
+  'ADDRESS_TYPE_HOUSE': '1',
+  'ADDRESS_TYPE_APARTMENT': '2',
+  'ADDRESS_TYPE_OFFICE': '3',
+  'ADDRESS_TYPES': [
+    '1',
+    '2',
+    '3'
+  ],
+  'BOOKING_STATE_REQUESTED': '1',
+  'BOOKING_STATE_REQUESTED_PAID': '2',
+  'BOOKING_STATE_DECLINED': '3',
+  'BOOKING_STATE_CONFIRMED': '4',
+  'BOOKING_STATE_STARTED_IN_PROGRESS': '5',
+  'BOOKING_STATE_COMPLETED': '6',
+  'BOOKING_STATE_CANCELLED': '7',
+  'BOOKING_STATE_CANCELLED_OUT_OF_REFUND_PERIOD': '8',
+  'BOOKING_STATE_CONFIRMED_BUT_PAYMENT_FAILED': '9',
+  'BOOKING_STATE_CONFIRMED_SKIPPED': '10',
+  'BOOKING_STATE_COMPLETED_SKIPPED': '11',
+  'BOOKING_STATES': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11'
+  ],
+  'BOOKING_UPDATE_IGNORE_STATES': [
+    '6',
+    '7',
+    '8'
+  ],
+  'BOOKING_UPDATE_CLEANER_IGNORE_STATES': [
+    '7',
+    '8'
+  ],
+  'BOOKING_DAY_STATUS_ARRIVED': '1',
+  'BOOKING_DAY_STATUS_INCOMING': '2',
+  'BOOKING_DAY_STATUS_PROBLEM': '3',
+  'BOOKING_DAY_STATUS_UNREACHABLE': '4',
+  'BOOKING_DAY_STATUS_SUBSTITUTE': '5',
+  'BOOKING_DAY_STATUS': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5'
+  ],
+  'CLEANING_ITEM_ROOMS': '1',
+  'CLEANING_ITEM_BATHROOMS': '2',
+  'CLEANING_ITEM_INSIDE_WALLS': '3',
+  'CLEANING_INSIDE_WINDOWS': '4',
+  'CLEANING_CABINETS': '5',
+  'CLEANING_INSIDE_FRIDGE': '6',
+  'CLEANING_INSIDE_OVEN': '7',
+  'CLEANING_LAUNDRY_IRONING': '8',
+  'CLEANING_ITEMS': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8'
+  ],
+  'SKILL_IRONING': '1',
+  'SKILL_PETS': '2',
+  'SKILL_CHILDREN_UNDER_5': '3',
+  'SKILL_CHILDREN_OVER_5': '4',
+  'SKILL_COOKING': '5',
+  'SKILL_WASHING_MACHINE': '6',
+  'SKILLS': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6'
+  ],
+  'CLEANING_DURATION_INDIVIDUAL_HALF_DAY': '1',
+  'CLEANING_DURATION_INDIVIDUAL_FULL_DAY': '2',
+  'CLEANING_DURATION_SERVICE': '3',
+  'CLEANING_DURATION_INDIVIDUAL_HALF_DAY_MORNING': '4',
+  'CLEANING_DURATION_INDIVIDUAL_HALF_DAY_AFTERNOON': '5',
+  'CLEANING_DURATIONS': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5'
+  ],
+  'CLEANER_AVAILABILITY_OPERATION_TYPE_BOOK_DAY_OFF': '1',
+  'CLEANER_AVAILABILITY_OPERATION_TYPE_FREE_BOOKED_DAY_UP': '2',
+  'CLEANER_AVAILABILITY_OPERATION_TYPES': [
+    '1',
+    '2'
+  ],
+  'MOMENT_DATE_FOR_YMD': 'YY-M-D',
+  'NOTIFICATION_TYPE_PUSH_GCM': '1',
+  'NOTIFICATION_TYPES': [
+    '1'
+  ],
+  'PAYMENT_PROVIDER_MANUAL': '0',
+  'PAYMENT_PROVIDER_PEACH_PAYMENTS': '1',
+  'PAYMENT_PROVIDER_E_WALLET': '2',
+  'PAYMENT_PROVIDER_EFT': '3',
+  'PAYMENT_PROVIDER_USER_WALLET_CREDIT': '4',
+  'PAYMENT_PROVIDER_USER_WALLET_CREDIT_PARTIAL_PART_OF_BULK': '5',
+  'PAYMENT_PROVIDER_VOUCHERIFY': '6',
+  'PAYMENT_PROVIDERS': [
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6'
+  ],
+  'TRANSACTION_REASON_TYPE_CLEANER_REQUEST': '1',
+  'TRANSACTION_REASON_TYPE_CUSTOMER_REFUND': '2',
+  'TRANSACTION_REASON_TYPE_CUSTOMER_PAYMENT': '3',
+  'TRANSACTION_REASON_TYPE_CLEANER_PAYOUT': '4',
+  'TRANSACTION_REASON_TYPE_SIGNUP_CREDIT': '5',
+  'TRANSACTION_REASON_TYPE_ADMINISTRATOR_CREDIT': '6',
+  'TRANSACTION_REASON_TYPE_ADMINISTRATOR_DEBIT': '7',
+  'TRANSACTION_REASON_TYPE_VOUCHERIFY': '8',
+  'TRANSACTION_REASON_TYPE_CUSTOMER_REFUND_FROM_SKIP': '9',
+  'TRANSACTION_REASON_TYPE_CUSTOMER_SURCHARGE': '10',
+  'TRANSACTION_REASON_TYPES': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10'
+  ],
+  'ACCOUNT_TYPE_SAVINGS': '1',
+  'ACCOUNT_TYPE_CHEQUE': '2',
+  'ACCOUNT_TYPES': [
+    '1',
+    '2'
+  ],
+  'USER_ROLE_CLEANER': '1',
+  'USER_ROLE_CUSTOMER': '2',
+  'USER_ROLE_ADMIN': '3',
+  'USER_ROLES': [
+    '1',
+    '2',
+    '3'
+  ],
+  'USER_TYPE_CLEANING_INDIVIDUAL': '1',
+  'USER_TYPE_CLEANING_AGENCY': '2',
+  'USER_TYPE_CLEANING_SERVICE': '3',
+  'USER_TYPE_CLEANING_SERVICE_AND_AGENCY': '4',
+  'USER_TYPE_CUSTOMER': '5',
+  'USER_TYPE_ADMIN_SUPER': '6',
+  'USER_TYPES': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6'
+  ],
+  'USER_STATE_PENDING': '1',
+  'USER_STATE_APPROVED': '2',
+  'USER_STATE_INACTIVE': '3',
+  'USER_STATE_BANNED': '4',
+  'USER_STATES': [
+    '1',
+    '2',
+    '3',
+    '4'
+  ],
+  'USER_ID_TYPE_ID': '1',
+  'USER_ID_TYPE_PASSPORT_NUMBER': '2',
+  'USER_ID_TYPE_REGISTRATION_NUM': '3',
+  'USER_ID_TYPES': [
+    '1',
+    '2',
+    '3'
+  ],
+  'CONTACT_TYPE_SMS': '1',
+  'CONTACT_TYPE_EMAIL': '2',
+  'CONTACT_TYPE_PUSH': '3',
+  'CONTACT_TYPES': [
+    '1',
+    '2',
+    '3'
+  ],
+  'LANGUAGE_ENGLISH': '1',
+  'LANGUAGE_AFRIKAANS': '2',
+  'LANGUAGE_ZULU': '3',
+  'LANGUAGE_XHOSA': '4',
+  'LANGUAGE_SOUTHERN_SOTHO': '5',
+  'LANGUAGE_TSWANA': '6',
+  'LANGUAGE_NORTHERN_SOTHO': '7',
+  'LANGUAGE_TSONGA': '8',
+  'LANGUAGE_VENDA': '9',
+  'LANGUAGE_SWATI': '10',
+  'LANGUAGE_NDEBELE': '11',
+  'LANGUAGES': [
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6',
+    '7',
+    '8',
+    '9',
+    '10',
+    '11'
+  ],
+  'USER_SIGNUP_DUPLICATE_FIELD_UNKNOWN': '-1',
+  'USER_SIGNUP_DUPLICATE_FIELD_EMAIL': '1',
+  'USER_SIGNUP_DUPLICATE_FIELD_CONTACT_NUMBER': '2',
+  'USER_SIGNUP_DUPLICATE_FIELD_AUTH_PROVIDER_FACEBOOK': '3',
+  'USER_SIGNUP_DUPLICATE_FIELDS': [
+    '-1',
+    '1',
+    '2',
+    '3'
+  ],
+  'USER_GENDER_MALE': '1',
+  'USER_GENDER_FEMALE': '2',
+  'USER_GENDER_OTHER': '3',
+  'USER_GENDERS': [
+    '2',
+    '1',
+    '3'
+  ],
+  'WEEKDAY_SUNDAY': '0',
+  'WEEKDAY_MONDAY': '1',
+  'WEEKDAY_TUESDAY': '2',
+  'WEEKDAY_WEDNESDAY': '3',
+  'WEEKDAY_THURSDAY': '4',
+  'WEEKDAY_FRIDAY': '5',
+  'WEEKDAY_SATURDAY': '6',
+  'WEEK_DAYS': [
+    '0',
+    '1',
+    '2',
+    '3',
+    '4',
+    '5',
+    '6'
+  ],
+  'SCHEDULE_STATE_PENDING': '1',
+  'SCHEDULE_STATE_CONFIRMED': '2',
+  'SCHEDULE_STATES': [
+    '1',
+    '2'
+  ],
+  'SCHEDULE_CANCELLATION_REASON_TYPE_NO_LONGER_SUITS_ME': '1',
+  'SCHEDULE_CANCELLATION_REASON_TYPE_MOVING': '2',
+  'SCHEDULE_CANCELLATION_REASON_TYPE_UNHAPPY': '3',
+  'SCHEDULE_CANCELLATION_REASON_TYPE_TEMPORARY_CANCELLATION': '4',
+  'SCHEDULE_CANCELLATION_REASON_TYPES': [
+    '1',
+    '2',
+    '3',
+    '4'
+  ],
+  'SCHEDULE_CANCELLATION_REASON_TYPE_LABELS': [
+    'No longer suits me',
+    'Moving',
+    'Unhappy',
+    'Temporary cancellation'
+  ]
+
+};

@@ -1,0 +1,11 @@
+import React, { Component } from 'react';
+
+export default class IconGeneralBack extends Component {
+  render() {
+    return (
+      <svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 22 22">
+        <path fill="#7ED321" fillRule="evenodd" d="M7.096 12l2.243 2.242a1 1 0 0 1-1.414 1.415L3.268 11l4.657-4.657a1 1 0 0 1 1.414 1.414L7.096 10H14a1 1 0 0 1 0 2H7.096z" />
+      </svg>
+    );
+  }
+}

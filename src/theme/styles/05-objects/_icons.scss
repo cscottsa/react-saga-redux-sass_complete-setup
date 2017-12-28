@@ -1,0 +1,54 @@
+.icon{
+  vertical-align: middle;
+  display:inline-block;
+  position: relative;
+  margin-top:-1px;
+  svg{
+  vertical-align: top;
+  }
+}
+
+
+
+//--- Swap icons ---//
+
+// hover
+.icon-hover{
+  &--swap{
+    svg{display:none;}
+    svg:first-child{display:block;}
+    svg:last-child{display:none;}
+  }
+}
+
+*:hover > .icon-hover{
+  &--swap{
+    svg:first-child{display:none;}
+    svg:last-child{display:block; animation:iconSwop .2s;}
+  }
+}
+
+
+@keyframes iconSwop{
+  0%{opacity:0.1;}
+  100%{opacity:1;}
+}
+
+// selected
+.icon--selected{
+  svg{display:block;}
+  svg:first-child{display:none;}
+}
+
+
+//--- Fill change on hover ---//
+*:hover > .icon .fill{
+  transition:fill .2s ease-out;
+}
+*:hover > .icon-hover{
+
+  &--white .fill{
+    fill:$white;
+  }
+
+}

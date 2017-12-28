@@ -1,0 +1,341 @@
+form {
+  h5 {
+    padding-top: 20px;
+    padding-bottom: 10px;
+
+    &.h5--remove-padding-top {
+      @include breakpoint(md) {
+        padding-top: 0;
+      }
+    }
+  }
+}
+
+.form-control {
+  display:block;
+  position:relative;
+  width:100%;
+  height: 44px;
+  padding: 10px 15px 10px 15px;
+  font-size: 15px;
+  font-weight:normal;
+  line-height: 1.428;
+  color: $black;
+  background-color: $white;
+  border: solid 1px $pale-grey;
+  border-radius: 3px;
+  box-shadow: none;
+
+  @include breakpoint(lg) {
+    height: 50px;
+    padding: 14px 20px 13px;
+  }
+
+  &--sm{
+    height: 40px;
+    padding: 9px 15px 8px;
+  }
+
+  &--email{
+    background:$white url(./images/svg/icn-account-email.svg) left 15px center no-repeat;
+    background-size:20px 20px;
+    padding: 10px 15px 10px 46px;
+    transition:background-position .2s ease-out;
+  }
+  &--password{
+    background:$white url(./images/svg/icn-account-password.svg) left 15px center no-repeat;
+    background-size:20px 20px;
+    padding: 10px 15px 10px 46px;
+    transition:background-position .2s ease-out;
+  }
+  &--location{
+    background:$white url(./images/svg/icn-account-location.svg) left 15px center no-repeat;
+    background-size:20px 20px;
+    padding: 10px 15px 10px 46px;
+    transition:background-position .2s ease-out;
+  }
+  &::-webkit-search-cancel-button{
+    position:relative;
+    right:-15px;
+    -webkit-appearance:none;
+    height:20px;
+    width:30px;
+    background:$white url(./images/svg/close.svg) no-repeat;
+    background-size:20px 20px;
+  }
+  &::-ms-clear{
+    margin-right:-10px;
+  }
+
+
+
+}
+
+.form-control:focus,
+.form-control:active{
+  outline: 0;
+}
+
+.form-control[type="email"]{text-transform: none;}
+textarea.form-control{height:auto !important; text-transform: none;}
+
+.form-control::-webkit-input-placeholder {
+  color: $hint-grey; font-weight: normal;  opacity:1;
+}
+.form-control::-moz-placeholder {
+  color: $hint-grey; font-weight: normal;
+}
+.form-control:-ms-input-placeholder {
+  color: $hint-grey; font-weight: normal; opacity:1;
+}
+.form-control:-moz-placeholder {
+  color: $hint-grey; font-weight: normal; opacity:1;
+}
+
+
+select.form-control{
+  $padding-right: 37.5px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  color: $dark-grey;
+  cursor: pointer;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-right: $padding-right;
+  &::-ms-expand {
+    display: none;
+  }
+
+  option{
+    color:$black;
+  }
+  option[default],
+  option[value=""]{
+    color: $hint-grey;
+  }
+
+  background:$white url(./images/svg/icn-general-dropdown.svg) right 10px center no-repeat;
+  background-size:22px;
+}
+select.form-control--incomplete{
+
+  option{
+    color:$black;
+  }
+  option[default],
+  option[value=""]{
+    color: $hint-grey;
+  }
+
+}
+select.form-control--thin {
+  height: 44px;
+}
+
+
+
+.form-group{
+  position: relative;
+  margin-bottom:10px;
+
+  label{
+    display:block;
+    min-height: 15px;
+    margin-top: 10px;
+    margin-bottom:10px;
+
+    &.error{
+      color:$red;
+      font-size: 12px;
+      font-weight: 300;
+      margin:10px 20px 10px 0;
+    }
+
+  }
+
+  /* special form-groups */
+  &--error{
+
+    .form-control{
+      border-color: $red;
+    }
+
+  }
+
+  &--btn{
+    margin:20px 0 0;
+    text-align: center;
+  }
+
+
+  &--forgot-pass{
+    text-align: right;
+    line-height: 20px;
+  }
+
+
+  /* checkboxes */
+  .checkbox,
+  .radio{
+    display:block;
+    clear:both;
+    position:relative;
+    padding:0;
+    margin:0 0 5px;
+    cursor:pointer;
+    text-align: left;
+    @include clearfix;
+
+
+
+    &__indi{
+      float:left;
+      position:relative;
+      display:inline-block;
+      margin:0 9px 0 0;
+      height:20px;
+      width:20px;
+      vertical-align:middle;
+      cursor:pointer;
+      background:$white url(./images/svg/check-on.svg) -9999px center no-repeat;
+      background-size:20px 20px;
+      border:1px solid $medium-grey;
+      border-radius:50%;
+      transition:all 0.2s ease-out;
+    }
+
+    &__label{
+      display:block;
+      position: relative;
+      margin:-1px 0 0 29px;
+      line-height: 21px;
+    }
+
+    input[type=checkbox],
+    input[type=radio]{
+      visibility:hidden;
+      position:absolute;
+      left:0;
+    }
+
+    input[type=checkbox]:checked + .checkbox__indi,
+    input[type=radio]:checked + .radio__indi{
+      background-position:center center;
+      background-color:$medium-green;
+      border-color:$medium-green;
+    }
+
+    &--inline{
+      display:inline-block;
+      vertical-align:bottom;
+    }
+
+    &--inline__label{
+      white-space:nowrap;
+      display:inline-block;
+      margin:2px 0;
+    }
+
+    @include breakpoint(md) {
+      &--lg{
+        .checkbox__indi,
+        .radio__indi{
+          height: 30px;
+          width: 30px;
+          margin-right:20px;
+          background-size:30px 30px;
+        }
+        .checkbox__label,
+        .radio__label{
+          padding-top:5px;
+        }
+      }
+    }
+
+  }
+
+}
+
+
+.radio-group {
+  display: flex;
+  height: 44px;
+  align-items: center;
+  @include breakpoint(md) {
+    height: 50px;
+  }
+
+  input {
+    margin-right: 11px;
+  }
+
+  span {
+    color: $dark-grey;
+    font-size: 15px;
+  }
+}
+
+
+.react-datepicker-wrapper {
+  width: 100%;
+  height: 44px;
+  @include breakpoint(lg) {
+    height: 50px;
+  }
+
+  .react-datepicker__input-container {
+    width: 100%;
+    height: 44px;
+    @include breakpoint(lg) {
+      height: 50px;
+    }
+
+    input {
+      width: 100%;
+      height: 44px;
+      background-color: $white;
+      color: $black;
+      font-size: 15px;
+      font-weight:normal;
+      line-height: 1.428;
+      padding: 10px 15px 10px 15px;
+      border:1px solid $pale-grey;
+      border-radius: 3px;
+      box-shadow: none;
+
+      @include breakpoint(lg) {
+        height: 50px;
+        padding: 14px 20px 13px;
+      }
+    }
+  }
+}
+
+
+.form-error {
+  margin-bottom: 10px;
+  min-height: 0;
+  text-align: center;
+
+  transition: min-height 0.2s ease-in-out;
+
+  &.is-active {
+    min-height: 19px;
+  }
+
+  span {
+    color: red;
+  }
+}
+
+
+
+
+
+
+
+
+
+
+

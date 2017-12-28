@@ -1,0 +1,52 @@
+//*** Styling classes ***//
+
+
+  //--- backgrounds ---//
+  .bg-color{
+    
+    &--background{
+      background-color:$background;
+    }
+    
+    &--background-fadeup{
+      background-image: linear-gradient(to top, $background, $white);
+    }
+    
+    &--orange-fade{
+      background-image: linear-gradient(to top, #ffb866, #fad961);
+    }  
+    
+  }
+  
+  //--- borders ---//
+  .bdr-btm{  
+    &--grey{
+      box-shadow: inset 0 -1px 0 0 $grey;
+    }
+    &--light-grey{
+      box-shadow: inset 0 -1px 0 0 $light-grey;
+    }    
+  }
+
+
+  //--- Shadows ---//
+  .shadow-std{
+    box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+    transition:box-shadow .2s ease-out;
+    &:hover,
+    &:focus{
+      box-shadow: 0 3px 10px 0 rgba(0, 0, 0, 0.3);
+    }
+    
+    &--no-hover{
+      &:hover,
+      &:focus{
+        box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.1);
+      }
+    }
+    
+  }
+  
+  .shadow-lg{
+    box-shadow: 0 10px 20px 0 rgba(119, 150, 158, 0.3);
+  }

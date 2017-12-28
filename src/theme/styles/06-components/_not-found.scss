@@ -1,0 +1,27 @@
+
+.NotFound {
+  padding: 30px 0;
+
+  .image {
+    text-align: center;
+    img {
+      max-width: 205px;
+    }
+  }
+
+  h3 {
+    text-align: center;
+    padding-bottom: 30px;
+  }
+
+  p {
+    color: $slate-grey;
+    text-align: center;
+    padding-bottom: 40px;
+  }
+
+  .action {
+    display: flex;
+    justify-content: center;
+  }
+}

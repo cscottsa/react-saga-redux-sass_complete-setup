@@ -1,0 +1,147 @@
+.is-hidden {
+  display: none !important;
+}
+
+//Accessibility helper text
+.a11y {
+  position: absolute !important;
+  top: -9999px !important;
+  left: -9999px !important;
+}
+
+.cf:before,
+.cf:after {
+  content: " ";
+  display: table;
+}
+.cf:after {clear: both;}
+
+
+.img-responsive{
+    display: block;
+    max-width: 100%;
+    height: auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+.img-max{
+    display: block;
+    width: 100%;
+    height: auto;
+    margin-left:auto;
+    margin-right:auto;
+}
+.img-featured{
+  margin-bottom:30px !important;
+  @include breakpoint(md) {
+    margin-bottom:50px !important;
+  }
+}
+
+.text-center{
+  text-align: center;
+}
+
+.center-block {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.center-vert{
+  position:relative;
+  top:50%;
+  transform:translateY(-50%);
+}
+
+.pull-right {
+  float: right !important;
+}
+.pull-left {
+  float: left !important;
+}
+
+
+.sep{
+  border-bottom:1px solid $grey;
+  margin:20px 0 25px;
+}
+
+
+
+.hide {
+  display: none !important;
+}
+.show {
+  display: block !important;
+}
+.invisible {
+  visibility: hidden;
+}
+.text-hide {
+  font: 0/0 a;
+  color: transparent;
+  text-shadow: none;
+  background-color: transparent;
+  border: 0;
+}
+.hidden {
+  display: none !important;
+}
+.affix {
+  position: fixed;
+}
+@-ms-viewport {
+  width: device-width;
+}
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg {
+  display: none !important;
+}
+
+@media (max-width: 767px) {
+  .visible-xs {
+    display: block !important;
+  }  
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .visible-sm {
+    display: block !important;
+  }  
+}
+
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .visible-md {
+    display: block !important;
+  }  
+}
+
+@media (min-width: 1366px) {
+  .visible-lg {
+    display: block !important;
+  }  
+}
+
+@media (max-width: 767px) {
+  .hidden-xs {
+    display: none !important;
+  }
+}
+@media (min-width: 768px) and (max-width: 1023px) {
+  .hidden-sm {
+    display: none !important;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1365px) {
+  .hidden-md {
+    display: none !important;
+  }
+}
+@media (min-width: 1366px) {
+  .hidden-lg {
+    display: none !important;
+  }
+}

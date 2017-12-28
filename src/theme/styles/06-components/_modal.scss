@@ -1,0 +1,373 @@
+//*** Modal frame and positioning ***//
+.modal-overflow {
+  overflow: hidden;
+}
+
+.modal-bg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5000;
+  overflow: hidden;
+  opacity: 0;
+  background-color: rgba(29, 37, 45, 0.9);
+  transition: opacity 0.3s ease-out;
+
+  &.is-active {
+    opacity: .9;
+  }
+
+}
+
+.modal-bg--loading {
+  background-color: rgba(255, 255, 255, 0.68);
+}
+
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5010;
+  outline: none;
+
+  opacity: 0;
+
+  overflow-x: hidden;
+  overflow-y: auto;
+
+  transition: all 0.2s ease-out;
+
+  &.is-active {
+    opacity: 1;
+    transform: translateY(0) perspective(600px) rotateX(0);
+  }
+
+  &.modal--sm-center {
+    @include breakpoint(sm) {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+    }
+  }
+
+  &__container {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    padding: 0 10px;
+    text-align: center;
+    &:before {
+      content: '';
+      display: inline-block;
+      height: 100%;
+      vertical-align: middle;
+    }
+  }
+
+  &__center {
+    //position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    margin: 0 auto;
+    text-align: left;
+    z-index: 5020;
+    width: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    @include breakpoint(md) {
+      padding: 20px 0;
+    }
+  }
+
+  &__close {
+    z-index: 5050;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    cursor: pointer;
+    @include breakpoint(sm) {
+      right: 14px;
+      top: 14px;
+    }
+    &:hover {
+      path {
+        fill: $green;
+      }
+    }
+  }
+
+  &__head {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 50px;
+    padding: 0 16px;
+    box-shadow: 0 2px 4px 0 rgba(29, 37, 45, 0.04);
+    @include breakpoint(sm) {
+      height: 40px;
+      box-shadow: none;
+    }
+
+    &__logo {
+      display: flex;
+      img {
+        height: 24px;
+        @include breakpoint(sm) {
+          display: none;
+        }
+      }
+    }
+
+    .modal__close {
+      position: relative;
+      top: 0;
+      right: 0;
+      @include breakpoint(sm) {
+        top: 5px;
+      }
+    }
+
+    &--only-close {
+      img {
+        display: none;
+      }
+
+      box-shadow: none;
+    }
+  }
+
+}
+
+//--- modal styles ---//
+.modal-std {
+  display: block;
+  background-color: white;
+  max-width: 768px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px 0 rgba(29, 37, 45, 0.15);
+  transition: all 0.2s ease-out;
+  @include breakpoint(sm) {
+    max-width: 464px;
+    border-radius: 4px;
+  }
+
+  &__content {
+    padding: 20px 16px 25px 16px;
+    @include breakpoint(sm) {
+      padding: 0 40px 40px 40px;
+    }
+
+    h3 {
+      font-size: 20px;
+      color: $dark-grey;
+      padding-bottom: 20px;
+      @include breakpoint(sm) {
+        font-size: 28px;
+        padding-bottom: 20px;
+      }
+    }
+
+    & > p {
+      color: $slate-grey;
+      font-size: 15px;
+      font-weight: 300;
+      padding-bottom: 20px;
+      @include breakpoint(sm) {
+        font-size: 14px;
+      }
+    }
+  }
+
+  &.modal-std--fill-mobile {
+    min-height: 100vh;
+    @include breakpoint(sm) {
+      min-height: initial;
+    }
+  }
+
+}
+
+.modal-std--loading {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  .loading-icon {
+    display: block;
+    width: 40px;
+    height: 40px;
+    margin: 0 auto;
+    border-radius: 50%;
+    background-color: rgba(29, 37, 45, 0.13);
+  }
+}
+
+.modal-std--auth {
+
+  &__voucher-notification {
+
+    &__detected {
+      color: $green;
+      font-size: 20px;
+      font-weight: 500;
+      text-align: center;
+      padding: 0 0 5px 0;
+    }
+
+    &__blurb {
+      color: $green;
+      font-size: 15px;
+      font-weight: 400;
+      text-align: center;
+      padding: 0 0 10px 0;
+    }
+  }
+
+  .auth-error {
+    color: $red;
+    text-align: center;
+    padding-bottom: 15px;
+  }
+
+  .forgot-password-right {
+    display: flex;
+    justify-content: flex-end;
+    padding-bottom: 20px;
+    span {
+      color: $green;
+      font-size: 12px;
+      font-weight: 400;
+      cursor: pointer;
+    }
+  }
+
+  .password-requirements {
+    font-size: 12px;
+    color: $mid-grey;
+    padding-bottom: 20px;
+  }
+
+  .btn {
+    max-width: none;
+  }
+
+  .or-divider {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 100%;
+    height: 52px;
+
+    div {
+      display: inline-block;
+      width: 100%;
+      height: 1px;
+      background-color: $light-grey;
+      vertical-align: center;
+    }
+
+    span {
+      position: absolute;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-self: center;
+      width: 40px;
+      background-color: $white;
+      color: $slate-grey;
+      text-align: center;
+      margin: 0 auto;
+    }
+  }
+
+  .disclaimer {
+    color: $slate-grey;
+    font-size: 12px;
+    font-weight: 300;
+    padding-top: 15px;
+
+    a {
+      font-weight: 500;
+    }
+  }
+
+  .auth-footer {
+    font-size: 14px;
+    color: $slate-grey;
+    text-align: center;
+    padding-top: 40px;
+
+    a {
+      font-weight: 500;
+      padding-left: 4px;
+    }
+
+    span {
+      padding: 0 3px 0 6px;
+    }
+  }
+}
+
+
+.modal-std--verify-location {
+  max-width: 556px;
+
+  h4 {
+    font-size: 20px;
+    text-align: center;
+    padding-bottom: 25px;
+  }
+
+  &__content {
+    padding: 0 0 25px 0;
+    @include breakpoint(sm) {
+      padding: 0 0 40px 0;
+    }
+  }
+
+  &__top-container {
+    padding: 20px 16px 0 16px;
+    @include breakpoint(sm) {
+      padding: 0 40px 0 40px;
+    }
+
+    .address {
+      padding: 5px 0 15px 0;
+    }
+  }
+
+  .SearchGoogleMap {
+    display: block;
+    height: 399px;
+    padding: 0;
+    @include breakpoint(sm) {
+      padding: 0 40px;
+      width: 556px;
+    }
+
+    &__map {
+      height: 399px;
+    }
+  }
+}
+
+
+
+
+.modal.is-active .modal-video {
+  opacity: 1;
+  transform: translateY(0) perspective(600px) rotateX(0);
+}
+
+.pac-container {
+  z-index: 999999 !important;
+}
